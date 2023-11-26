@@ -53,3 +53,8 @@ docker run -d --name backend1 -p 9010:3010 -e PORT=3010 -e SERVICE_BACKEND2=http
 
 
 docker run -d --name backend2 -e PORT=3020 --network net-ms backend2:v1  ---- backend2
+
+
+
+para recargar el composer
+docker-compose up -d --build

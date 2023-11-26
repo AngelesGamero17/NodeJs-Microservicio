@@ -1,7 +1,13 @@
 FROM node:alpine3.18
 
-COPY ./ ./
+ARG dir=backend2
 
-RUN npm install 
+WORKDIR /myapp
 
-CMD ["node", "."]
+COPY ${dir}/package.json .
+
+RUN npm install
+
+COPY ${dir}/. .
+
+CMD ["npm", "start"]
